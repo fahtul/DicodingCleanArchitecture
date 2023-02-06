@@ -46,7 +46,7 @@ val networkModule = module {
     }
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl(BuildConfig.URL)
+            .baseUrl("https://api.rawg.io/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()
