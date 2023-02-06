@@ -64,7 +64,7 @@ val databaseModule = module {
             GameDatabase::class.java, "Game.db"
         ).fallbackToDestructiveMigration().build()
     }
-} 
+}
 
 val repositoryModule = module {
     single { GameLocalDataSource(get()) }
