@@ -1,6 +1,7 @@
 package id.fahtul.core.di
 
 import androidx.room.Room
+import id.fahtul.core.BuildConfig
 import id.fahtul.core.data.DetailGameRepository
 import id.fahtul.core.data.GameRepository
 import id.fahtul.core.data.source.local.DetailGameLocalDataSource
@@ -26,7 +27,7 @@ val networkModule = module {
             val originalHttpUrl = original.url
 
             val url = originalHttpUrl.newBuilder()
-                .addQueryParameter("key", "ee1f60ee306e455b8bf2e8aa65f4f707")
+                .addQueryParameter("key", BuildConfig.API_KEY)
                 .build()
             val requestBuilder = original.newBuilder()
                 .url(url)
@@ -45,7 +46,7 @@ val networkModule = module {
     }
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.rawg.io/api/")
+            .baseUrl(BuildConfig.URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()
