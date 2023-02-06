@@ -21,17 +21,17 @@
 #!/usr/bin/env bash
 
 function copyEnvVarsToGradleProperties {
-    LOCAL_PROPERTIES=$HOME"/.gradle/local.properties"
-    export LOCAL_PROPERTIES
-    echo "Local Properties should exist at LOCAL_PROPERTIES"
+    GRADLE_PROPERTIES=$HOME"/.gradle/gradle.properties"
+    export GRADLE_PROPERTIES
+    echo "Gradle Properties should exist at $GRADLE_PROPERTIES"
 
-    if [ ! -f "LOCAL_PROPERTIES" ]; then
-        echo "Local Properties does not exist"
+    if [ ! -f "$GRADLE_PROPERTIES" ]; then
+        echo "Gradle Properties does not exist"
 
-        echo "Creating Local Properties file..."
-        touch LOCAL_PROPERTIES
+        echo "Creating Gradle Properties file..."
+        touch $GRADLE_PROPERTIES
 
-        echo "Writing API_KEY to local.properties..."
-        echo "API_KEY=$API_KEY" >> LOCAL_PROPERTIES
+        echo "Writing API_KEY to gradle.properties..."
+        echo "API_KEY=$API_KEY" >> $GRADLE_PROPERTIES
     fi
 }
