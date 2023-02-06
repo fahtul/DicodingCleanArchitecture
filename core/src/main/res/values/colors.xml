@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="card_background">#202020</color>
+    <color name="detail_text_color">#828282</color>
+</resources>

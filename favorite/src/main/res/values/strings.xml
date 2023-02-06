@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_data">Your Favorite is Empty</string>
+    <string name="favorite">Favorite</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/favoriteFragment">
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="id.fahtul.favorite.FavoriteFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favorite_to_detail_fragment"
+            app:destination="@+id/navigation_detail"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="id.fahtul.dicodingexpertsubmission1.detail.DetailFragment"
+        android:label="@string/label_detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="detailGame"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

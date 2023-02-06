@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="release_date">Release Date</string>
+    <string name="rating">Rating</string>
+    <string name="reviews_count">Reviews Count</string>
+    <string name="game">Game</string>
+    <string name="favorite">Favorite</string>
+    <string name="detail">Detail</string>
+    <string name="something_wrong">Somthing Wrong</string>
+</resources>

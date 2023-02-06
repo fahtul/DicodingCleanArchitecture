@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="16dp"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_background"
+        android:paddingBottom="16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgGame"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@color/cardview_dark_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/imgExpand"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fab"
+            tools:text="Vampire: The Massquerade - Bloodlines 2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgExpand"
+            android:layout_width="32dp"
+            android:layout_height="32sp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/baseline_keyboard_arrow_down_24"
+            app:layout_constraintBottom_toBottomOf="@id/txtTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgGame"
+            app:layout_constraintTop_toTopOf="@id/txtTitle" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRatingHolder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/rating"
+            android:textColor="@color/detail_text_color"
+            app:layout_constraintEnd_toStartOf="@id/gd1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtReviewsCountHolder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/reviews_count"
+            android:textColor="@color/detail_text_color"
+            app:layout_constraintEnd_toStartOf="@id/gd1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtRatingHolder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtReleaseHolder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/release_date"
+            android:textColor="@color/detail_text_color"
+            app:layout_constraintEnd_toStartOf="@id/gd1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtReviewsCountHolder" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtRating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/txtRatingHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gd1"
+            app:layout_constraintTop_toTopOf="@id/txtRatingHolder"
+            tools:text="Dec 13, 2022" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtReviewsCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/txtReviewsCountHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gd1"
+            app:layout_constraintTop_toTopOf="@id/txtReviewsCountHolder"
+            tools:text="Dec 13, 2022" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtReleaseDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/txtReleaseHolder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gd1"
+            app:layout_constraintTop_toTopOf="@id/txtReleaseHolder"
+            tools:text="Dec 13, 2022" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="txtRating, txtRatingHolder, txtReleaseDate, txtReleaseHolder, txtReviewsCountHolder, txtReviewsCount" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgGame"
+            app:layout_constraintBottom_toBottomOf="@id/imgGame"
+            app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

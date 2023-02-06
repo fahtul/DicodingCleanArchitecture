@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DicodingExpertSubmission1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="something_wrong">Something Went Wrong</string>
+    <string name="label_home">Home</string>
+    <string name="label_detail">Detail</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="label_favorite">Favorite</string>
+</resources>
