@@ -5,13 +5,14 @@ version: 2.1
 orbs:
   android: circleci/android@0.2.1
 
+dependencies:
+      pre:
+        - source environmentSetup.sh && copyEnvVarsToGradleProperties
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build:
-    dependencies:
-      pre:
-        - source environmentSetup.sh && copyEnvVarsToGradleProperties
     executor: android/android
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
