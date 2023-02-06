@@ -32,6 +32,6 @@ function copyEnvVarsToGradleProperties {
         touch LOCAL_PROPERTIES
 
         echo "Writing API_KEY to local.properties..."
-        echo "API_KEY=$TEST_API_KEY_ENV_VAR" >> LOCAL_PROPERTIES
+        echo "API_KEY=$API_KEY" >> LOCAL_PROPERTIES
     fi
 }
