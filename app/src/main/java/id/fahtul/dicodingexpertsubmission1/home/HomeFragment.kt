@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(activity != null) {
+        if (activity != null) {
             val gameAdapter = GameAdapter()
             gameAdapter.onItemClick = { selectedData ->
                 val toDetailGame = HomeFragmentDirections.actionHomeFragmentToDetailFragment()
@@ -70,5 +70,10 @@ class HomeFragment : Fragment() {
                 adapter = gameAdapter
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

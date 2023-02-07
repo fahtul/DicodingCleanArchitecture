@@ -33,7 +33,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(activity != null) {
+        if (activity != null) {
             val detailGameId = DetailFragmentArgs.fromBundle(arguments as Bundle).detailGame
             detailViewModel.getDetailGame(detailGameId).observe(viewLifecycleOwner) { detailGame ->
                 if (detailGame != null) {
@@ -45,8 +45,8 @@ class DetailFragment : Fragment() {
                         }
                         is Resource.Error -> {
                             binding.progressBar.visibility = View.GONE
-                            binding.viewError.tvError.visibility = View.VISIBLE
-                            binding.viewError.tvError.text =
+                            binding.viewErrorHome.tvError.visibility = View.VISIBLE
+                            binding.viewErrorHome.tvError.text =
                                 detailGame.message ?: getString(R.string.something_wrong)
                         }
                     }
@@ -65,11 +65,16 @@ class DetailFragment : Fragment() {
             binding.txtReleaseDate.text = detailGame.released
             binding.txtReviewsCount.text = detailGame.reviewsCount.toString()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                binding.tvItemDescription.text = Html.fromHtml(detailGame.description, Html.FROM_HTML_MODE_COMPACT)
+                binding.tvItemDescription.text =
+                    Html.fromHtml(detailGame.description, Html.FROM_HTML_MODE_COMPACT)
             } else {
                 binding.tvItemDescription.text = Html.fromHtml(detailGame.description)
             }
-
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

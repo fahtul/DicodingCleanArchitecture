@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHostFragment =  supportFragmentManager.findFragmentById(
+        val navHostFragment = supportFragmentManager.findFragmentById(
             R.id.nav_host_fragment
         ) as NavHostFragment
         navController = navHostFragment.navController
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         )
 
         setupBottomNavMenu(navController)
-
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupBottomNavMenu(navController: NavController){
+    private fun setupBottomNavMenu(navController: NavController) {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav?.setupWithNavController(navController)
     }

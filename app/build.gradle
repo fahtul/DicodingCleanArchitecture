@@ -4,10 +4,19 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id "androidx.navigation.safeargs"
+    id "org.jlleitschuh.gradle.ktlint" version "11.0.0"
 }
 apply from: '../shared_dependencies.gradle'
 
 android {
+    signingConfigs {
+        release {
+        storeFile file('/Users/anon/Desktop/submissionKeyStore')
+            storePassword 'submissionKeyStore'
+            keyPassword 'submissionKeyStore'
+            keyAlias 'key0'
+        }
+    }
     compileSdk 33
 
     defaultConfig {
@@ -23,7 +32,11 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -40,9 +53,24 @@ android {
     dynamicFeatures = [':favorite']
 }
 
+tasks.getByPath("preBuild").dependsOn("ktlintFormat")
+
+ktlint {
+    android = true
+    ignoreFailures = false
+    disabledRules = ["final-newline", "no-wildcard-imports"]
+    reporters {
+        reporter "plain"
+        reporter "checkstyle"
+        reporter "sarif"
+    }
+}
+
 dependencies {
     implementation project(":core")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:multidex:1.0.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
 }

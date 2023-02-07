@@ -3,7 +3,6 @@
 
     <dist:module
         dist:instant="false"
-        dist:onDemand="false"
         dist:title="@string/title_favorite">
         <dist:delivery>
             <dist:install-time />
